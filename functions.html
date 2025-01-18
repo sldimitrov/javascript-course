@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Rock Paper Scissors</h2>
+    <p>
+        <button onclick="pickComputerMove('rock')">
+            Rock
+        </button >
+        <button onclick="pickComputerMove('paper')">
+            Paper
+        </button>
+        <button onclick="pickComputerMove('scissors')">
+            Scissors
+        </button>
+    </p>
+    <script>
+        function pickComputerMove(humanMove) {
+            const randomNumber = Math.random();
+
+            // Some logic to transform randomNumber to a pick from the three options.
+
+            alert(humanMove, 'vs', randomNumber)
+        }
+    </script>
+</body>
+</html>

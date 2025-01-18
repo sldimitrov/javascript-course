@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h2>Rock Paper Scissors</h2>
+<p>
+    <input id="text" />
+    <button onclick="displayWord()">Display</button>
+    <button onclick="saveWord()">Save</button>
+    <p id="display"></p>
+    <p id="dictionary">Dictionary:</p>
+</p>
+<script>
+    displayWords()
+
+    function getWord() {
+        return document.getElementById('text').value
+    }
+
+    function displayWord() {
+        document.getElementById('display').innerText = getWord()
+    }
+
+    async function saveWord() {
+        const wordToSave = getWord()
+
+        const dictionary = JSON.parse(localStorage.getItem('dictionary'))
+
+        console.log(dictionary)
+
+        if (!dictionary) {
+            localStorage.setItem('dictionary', JSON.stringify([wordToSave]))
+        } else {
+            dictionary.push(wordToSave)
+            localStorage.setItem('dictionary', JSON.stringify(dictionary))
+        }
+    }
+
+    function displayWords() {
+        const wordsList = JSON.parse(localStorage.getItem('dictionary'))
+        const app = document.getElementById('dictionary')
+
+        wordsList.forEach((item) => {
+            const p = document.createElement('p')
+            p.textContent = item
+            app.appendChild(p)
+          }
+        )
+    }
+</script>
+</body>
+</html>
