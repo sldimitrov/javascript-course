@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise</title>
+</head>
+<body>
+<h2>JS Object Exercise</h2>
+<p>
+    Cheapest basketball team:
+</p>
+<script>
+  const basketballFlairTeam = {
+    name: 'basketballFlairTeam',
+    players: 16,
+    price: 2048
+  }
+
+  const basketballEagleTeam = {
+    name: 'basketballFlairTeam',
+    players: 17,
+    price: 2049
+  }
+
+  function comparePrice(product1, product2) {
+    // Take two products and return the one which is less expensive
+    return product1.price < product2.price ? product1.name : product2.name
+  }
+
+  function isSameProduct(product1, product2) {
+    return !(product1.name !== product2.name || product1.price !== product2.price)
+  }
+
+  function convertToLowercase(word) {
+    let lowerCaseWord = ''
+    for (let i = 0; i <= word.length - 1; i++) {
+      lowerCaseWord += word[i].toLowerCase()
+    }
+    return lowerCaseWord
+  }
+
+  function multiplyWords(word, times) {
+    return word.repeat(times)
+  }
+
+  console.log(convertToLowercase('helloo'))
+
+  console.log(multiplyWords('Hello', 3))
+
+  console.log(isSameProduct(basketballFlairTeam, basketballEagleTeam))
+
+  // Increment property using dot notation
+  basketballFlairTeam.price += 51
+
+  // Add property that does not exist using list
+  basketballFlairTeam['delivery-time'] = '3 days'
+
+  const cheapestTeamName = comparePrice(basketballEagleTeam, basketballFlairTeam)
+</script>
+</body>
+</html>
