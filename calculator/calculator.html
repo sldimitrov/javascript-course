@@ -78,7 +78,7 @@
         currentDisplay = "= " + result
         updateDisplay()
       } catch(e) {
-        currentDisplay = "\nError"
+        currentDisplay = e.message
         updateDisplay()
       }
 
